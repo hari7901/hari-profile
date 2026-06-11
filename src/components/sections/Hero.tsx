@@ -37,7 +37,9 @@ export function Hero() {
           <span>The Daily Engineer · Vol. I · No. 01</span>
           <span className="hidden md:inline">{TODAY}</span>
           <span>
-            <LocalClock /> IST · ₹ <em className="text-vermilion not-italic">●</em> Live
+            <LocalClock /> IST · ₹{" "}
+            <em className="animate-blink inline-block text-vermilion not-italic">●</em>{" "}
+            Live
           </span>
         </motion.div>
 
@@ -69,12 +71,22 @@ export function Hero() {
                 <AnimatedText text="I engineer" />
               </motion.span>
               <motion.span variants={fadeUp} className="block">
-                <em className="display-italic text-vermilion">scalable</em>{" "}
+                <em
+                  className="amb-accent display-italic text-vermilion"
+                  style={{ ["--glow" as string]: "rgba(230,51,34,0.22)" }}
+                >
+                  scalable
+                </em>{" "}
                 <AnimatedText text="systems" delay={0.2} />
               </motion.span>
               <motion.span variants={fadeUp} className="block text-ink-muted">
                 <AnimatedText text="that ship." delay={0.4} />
-                <em className="display-italic ml-3 text-cobalt">Loudly.</em>
+                <em
+                  className="amb-accent display-italic ml-3 text-cobalt"
+                  style={{ ["--glow" as string]: "rgba(29,63,184,0.22)", animationDelay: "1.8s" }}
+                >
+                  Loudly.
+                </em>
               </motion.span>
             </h1>
 
@@ -207,7 +219,7 @@ export function Hero() {
             <div className="paper-card p-5">
               <div className="flex items-center justify-between border-b border-ink/40 pb-2 font-mono text-[10px] uppercase tracking-widest">
                 <span>In this issue</span>
-                <span className="text-vermilion">↓</span>
+                <span className="amb-float inline-block text-vermilion">↓</span>
               </div>
               <ol className="mt-3 space-y-2 text-sm">
                 {[

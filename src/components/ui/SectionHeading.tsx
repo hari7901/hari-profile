@@ -62,7 +62,10 @@ export function SectionHeading({
             aria-label={`Section ${index}`}
             className="group relative inline-block cursor-pointer select-none border-none bg-transparent p-0 text-left"
           >
-            <span className="display display-italic text-[clamp(4rem,11vw,8rem)] leading-[0.85] text-ink/15 transition-colors group-hover:text-vermilion/60">
+            <span
+              className="amb-float display display-italic block text-[clamp(4rem,11vw,8rem)] leading-[0.85] text-ink/15 transition-colors group-hover:text-vermilion/60"
+              style={{ animationDelay: `${(parseInt(index, 10) || 0) * 0.9}s` }}
+            >
               §{index}
             </span>
             {clicks >= 4 && (

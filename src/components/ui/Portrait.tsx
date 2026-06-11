@@ -224,14 +224,16 @@ export function Portrait({ src, alt, className }: PortraitProps) {
           }}
         />
 
-        {/* Tape strips at corners */}
+        {/* Tape strips at corners — catch a faint breeze */}
         <span
           aria-hidden
-          className="absolute -top-3 -left-4 rotate-[-18deg] bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgba(21,17,13,0.3)]"
+          className="amb-sway absolute -top-3 -left-4 bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgba(21,17,13,0.3)]"
+          style={{ ["--sway-base" as string]: "-18deg" }}
         />
         <span
           aria-hidden
-          className="absolute -bottom-3 -right-4 rotate-[10deg] bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgba(21,17,13,0.3)]"
+          className="amb-sway absolute -bottom-3 -right-4 bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgba(21,17,13,0.3)]"
+          style={{ ["--sway-base" as string]: "10deg", animationDelay: "2.5s" }}
         />
 
         {/* Caption strip below image (newspaper photo style) */}

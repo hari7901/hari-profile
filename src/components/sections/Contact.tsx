@@ -27,7 +27,10 @@ export function Contact() {
       >
         {/* Postage stamp in the top-right corner — like a stamped envelope */}
         <div className="absolute -right-3 -top-6 hidden md:block">
-          <div className="relative border-[3px] border-ink bg-paper p-1.5">
+          <div
+            className="amb-sway relative border-[3px] border-ink bg-paper p-1.5"
+            style={{ ["--sway-base" as string]: "-2deg" }}
+          >
             <div className="border border-ink bg-vermilion px-4 py-3 text-center font-mono text-paper">
               <div className="text-[10px] uppercase tracking-widest">Postage</div>
               <div className="display display-italic text-3xl leading-none">
@@ -45,7 +48,12 @@ export function Contact() {
         >
           <div>To: A curious recruiter / collaborator</div>
           <div>Re: Full Stack &amp; Backend opportunities</div>
-          <div>Date: Today, urgently</div>
+          <div>
+            Date: Today, urgently
+            <span className="amb-caret ml-0.5 inline-block bg-vermilion align-middle">
+              &nbsp;
+            </span>
+          </div>
         </motion.div>
 
         {/* Hand-drawn underline rule */}

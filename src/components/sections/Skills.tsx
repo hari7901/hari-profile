@@ -73,18 +73,20 @@ export function Skills() {
                 transform: `rotate(${(gi % 2 === 0 ? -0.6 : 0.5).toFixed(2)}deg)`,
               }}
             >
-              {/* Pinned tape strip */}
+              {/* Pinned tape strip — sways in a faint breeze */}
               <span
                 aria-hidden
-                className="absolute -top-3 left-6 h-2.5 w-16 bg-mustard/80"
+                className="amb-sway absolute -top-3 left-6 h-2.5 w-16 bg-mustard/80"
                 style={{
-                  transform: "rotate(-3deg)",
+                  ["--sway-base" as string]: "-3deg",
+                  animationDelay: `${gi * 0.5}s`,
                   boxShadow: "1px 1px 0 0 rgba(21,17,13,0.25)",
                 }}
               />
               <div className="flex items-center gap-3 border-b border-ink/30 pb-3">
                 <span
-                  className={`grid h-10 w-10 place-items-center border-2 border-ink ${BG[color]}`}
+                  className={`amb-bob grid h-10 w-10 place-items-center border-2 border-ink ${BG[color]}`}
+                  style={{ animationDelay: `${gi * 0.35}s` }}
                 >
                   <Icon className="h-5 w-5" />
                 </span>
@@ -129,7 +131,7 @@ export function Skills() {
               </div>
               <div className="mt-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-ink-muted">
                 <span>{group.items.length} items</span>
-                <span className="text-vermilion">✦</span>
+                <span className="amb-spin inline-block text-vermilion">✦</span>
               </div>
             </motion.div>
           );

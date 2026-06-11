@@ -30,16 +30,25 @@ function Stat({ stat, index }: { stat: StatItem; index: number }) {
       </span>
       <p className="text-sm leading-snug text-ink-soft">{stat.label}</p>
 
-      {/* Fill bar */}
+      {/* Fill bar — with a sheen that keeps sweeping across it */}
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.1, ease: EASE_OUT, delay: 0.15 * index }}
-        className="mt-2 h-1 origin-left bg-ink"
+        className="relative mt-2 h-2 origin-left overflow-hidden"
         style={{ background: accent }}
         aria-hidden
-      />
+      >
+        <span
+          className="amb-sheen absolute inset-y-0 -left-1/4 w-2/5"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent)",
+            animationDelay: `${index * 0.5}s`,
+          }}
+        />
+      </motion.div>
     </motion.div>
   );
 }

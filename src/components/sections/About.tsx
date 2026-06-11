@@ -67,7 +67,7 @@ export function About() {
         {/* Pull quote — magazine style */}
         <motion.div variants={fadeUp} className="md:col-span-7">
           <div className="relative">
-            <span className="display display-italic absolute -top-8 left-0 text-[8rem] leading-none text-vermilion">
+            <span className="amb-float display display-italic absolute -top-8 left-0 inline-block text-[8rem] leading-none text-vermilion">
               &ldquo;
             </span>
             <p className="display display-italic pl-12 text-[clamp(1.5rem,3.2vw,2.4rem)] leading-tight">
@@ -143,7 +143,7 @@ export function About() {
           <div className="paper-card relative h-full overflow-hidden p-6">
             <div
               aria-hidden
-              className="absolute -bottom-10 -right-10 h-40 w-40 opacity-30"
+              className="amb-drift-a absolute -bottom-10 -right-10 h-40 w-40"
               style={{
                 backgroundImage:
                   "radial-gradient(circle at 1px 1px, rgba(230,51,34,0.7) 1px, transparent 0)",

@@ -132,7 +132,7 @@ function ProjectCard({
               {/* Project number — large italic serif */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
                 <span
-                  className="display display-italic leading-none"
+                  className="amb-float display display-italic inline-block leading-none"
                   style={{ color, fontSize: "4.5rem", opacity: 0.9 }}
                 >
                   {index}
@@ -144,6 +144,16 @@ function ProjectCard({
                   {project.tagline}
                 </span>
               </div>
+              {/* Light sheen sweeping across the plate */}
+              <span
+                aria-hidden
+                className="amb-sheen absolute inset-y-0 -left-1/3 w-1/3"
+                style={{
+                  background:
+                    "linear-gradient(100deg, transparent, rgba(255,255,255,0.55), transparent)",
+                  animationDelay: `${(parseInt(index, 10) || 0) * 0.8}s`,
+                }}
+              />
             </div>
 
             <p className="text-sm leading-relaxed text-ink-soft">
