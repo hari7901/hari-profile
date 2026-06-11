@@ -154,11 +154,12 @@ export function CustomCursor() {
         animate={{
           width: hovering ? 46 : 30,
           height: hovering ? 46 : 30,
-          borderColor: hovering ? "#e63322" : "#15110d",
           rotate: hovering ? 45 : 0,
         }}
         transition={{ type: "spring", stiffness: 260, damping: 22 }}
-        className="absolute border-[1.5px]"
+        className={`absolute border-[1.5px] transition-colors duration-200 ${
+          hovering ? "border-vermilion" : "border-ink"
+        }`}
       />
 
       {/* Crisp ink nib — tracks 1:1 */}

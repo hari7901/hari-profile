@@ -3,14 +3,47 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light — warm newsprint. Channels are space-separated RGB. */
   :root {
     color-scheme: light;
-    --paper: #f1ead9;
-    --ink: #15110d;
+    --paper: 241 234 217;
+    --paper-deep: 233 223 200;
+    --paper-warm: 247 241 225;
+    --paper-card: 251 246 232;
+    --ink: 21 17 13;
+    --ink-soft: 58 50 42;
+    --ink-muted: 122 111 96;
+    --ink-faint: 168 158 139;
+    --vermilion: 230 51 34;
+    --cobalt: 29 63 184;
+    --mustard: 217 160 23;
+    --sage: 90 122 74;
+    --plum: 122 46 90;
+    --shadow: 21 17 13;
+  }
+
+  /* Dark — "newsprint at night": deep warm charcoal paper, warm off-white
+     ink, the same accents pushed brighter so they still sing. */
+  html.dark {
+    color-scheme: dark;
+    --paper: 22 19 14;
+    --paper-deep: 13 11 8;
+    --paper-warm: 30 26 20;
+    --paper-card: 33 29 22;
+    --ink: 240 233 217;
+    --ink-soft: 209 199 178;
+    --ink-muted: 150 139 120;
+    --ink-faint: 104 95 80;
+    --vermilion: 255 99 80;
+    --cobalt: 110 150 240;
+    --mustard: 233 181 64;
+    --sage: 130 168 110;
+    --plum: 198 104 158;
+    --shadow: 0 0 0;
   }
 
   * {
-    border-color: rgba(21, 17, 13, 0.12);
+    border-color: rgb(var(--ink) / 0.12);
   }
 
   html {
@@ -23,11 +56,12 @@
     @apply bg-paper text-ink font-sans antialiased;
     overflow-x: hidden;
     font-feature-settings: "ss01", "ss02", "cv11";
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
   ::selection {
-    background: #15110d;
-    color: #f1ead9;
+    background: rgb(var(--ink));
+    color: rgb(var(--paper));
   }
 
   /* Hide native cursor when the custom ink-comet cursor is active. */
@@ -89,15 +123,15 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #e9dfc8;
+    background: rgb(var(--paper-deep));
   }
   ::-webkit-scrollbar-thumb {
-    background: #15110d;
+    background: rgb(var(--ink));
     border-radius: 0;
-    border: 2px solid #e9dfc8;
+    border: 2px solid rgb(var(--paper-deep));
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #e63322;
+    background: rgb(var(--vermilion));
   }
 }
 
@@ -141,12 +175,12 @@
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
     text-underline-offset: 4px;
-    text-decoration-color: rgba(21, 17, 13, 0.45);
+    text-decoration-color: rgb(var(--ink) / 0.45);
     transition: text-decoration-color 0.25s ease, color 0.25s ease;
   }
   .ink-link:hover {
-    text-decoration-color: #e63322;
-    color: #e63322;
+    text-decoration-color: rgb(var(--vermilion));
+    color: rgb(var(--vermilion));
   }
 
   /* Hard rule used as horizontal divider */
@@ -159,8 +193,8 @@
   }
   .rule-double {
     height: 8px;
-    border-top: 1.5px solid #15110d;
-    border-bottom: 1.5px solid #15110d;
+    border-top: 1.5px solid rgb(var(--ink));
+    border-bottom: 1.5px solid rgb(var(--ink));
     background: transparent;
   }
 
@@ -168,7 +202,7 @@
   .stamp {
     @apply font-mono uppercase tracking-widest;
     border: 2px solid currentColor;
-    color: #15110d;
+    color: rgb(var(--ink));
   }
 
   /* Capsule label — bold pill with ink border */
@@ -182,21 +216,21 @@
   /* Paper card with hard ink border */
   .paper-card {
     @apply relative border border-ink bg-paper-card;
-    box-shadow: 4px 4px 0 0 #15110d;
+    box-shadow: 4px 4px 0 0 rgb(var(--shadow));
   }
 
   /* Number tag — oversized footnote-style */
   .num-tag {
     font-family: "Instrument Serif", Georgia, serif;
     font-style: italic;
-    color: rgba(21, 17, 13, 0.35);
+    color: rgb(var(--ink) / 0.35);
   }
 
   /* Halftone background */
   .halftone {
     background-image: radial-gradient(
       circle at 1px 1px,
-      rgba(21, 17, 13, 0.4) 1px,
+      rgb(var(--ink) / 0.4) 1px,
       transparent 0
     );
     background-size: 6px 6px;
@@ -204,10 +238,21 @@
   .halftone-fine {
     background-image: radial-gradient(
       circle at 1px 1px,
-      rgba(21, 17, 13, 0.3) 1px,
+      rgb(var(--ink) / 0.3) 1px,
       transparent 0
     );
     background-size: 4px 4px;
+  }
+
+  /* Portrait duotone — multiply onto the warm paper in light mode; on dark
+     the multiply would crush to black, so show a clean grayscale instead. */
+  .portrait-duotone {
+    filter: grayscale(1) contrast(1.2);
+    mix-blend-mode: multiply;
+  }
+  html.dark .portrait-duotone {
+    filter: grayscale(1) contrast(1.04) brightness(1.08);
+    mix-blend-mode: normal;
   }
 
   /* Newsprint paper texture overlay */
@@ -220,6 +265,11 @@
     opacity: 0.07;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* On dark, multiply hides the grain — lighten it instead for faint tooth. */
+  html.dark .grain::before {
+    mix-blend-mode: screen;
+    opacity: 0.05;
   }
 
   /* Hand-drawn underline */

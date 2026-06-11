@@ -41,7 +41,7 @@ export function Button(props: ButtonProps) {
     baseClasses,
     VARIANTS[variant],
     SIZES[size],
-    "shadow-[4px_4px_0_0_#15110d] hover:shadow-[2px_2px_0_0_#15110d] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-[0px_0px_0_0_#15110d]",
+    "shadow-hard-md hover:shadow-hard-sm hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none",
     className,
   );
 

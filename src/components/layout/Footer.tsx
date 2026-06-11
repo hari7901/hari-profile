@@ -75,7 +75,7 @@ export function Footer() {
               href="#home"
               className="group inline-flex flex-col items-end gap-1 font-mono text-[10px] uppercase tracking-widest text-ink"
             >
-              <span className="grid h-12 w-12 place-items-center border-2 border-ink bg-paper-card shadow-[3px_3px_0_0_#15110d] transition-all group-hover:shadow-[1px_1px_0_0_#15110d] group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
+              <span className="grid h-12 w-12 place-items-center border-2 border-ink bg-paper-card shadow-hard transition-all group-hover:shadow-hard-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
                 <ArrowUp className="h-5 w-5" />
               </span>
               Back to top
@@ -106,7 +106,7 @@ export function Footer() {
         style={{
           fontSize: "clamp(5rem, 22vw, 16rem)",
           color: "transparent",
-          WebkitTextStroke: "1.5px #15110d",
+          WebkitTextStroke: "1.5px rgb(var(--ink))",
           letterSpacing: "-0.06em",
         }}
       >

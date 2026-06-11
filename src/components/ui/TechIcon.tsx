@@ -45,19 +45,19 @@ const TECH: Record<string, TechMeta> = {
   javascript: { Icon: SiJavascript, color: "#F7DF1E" },
   python: { Icon: SiPython, color: "#3776AB" },
   react: { Icon: SiReact, color: "#61DAFB" },
-  nextjs: { Icon: SiNextdotjs, color: "#15110d" },
-  "next.js": { Icon: SiNextdotjs, color: "#15110d" },
+  nextjs: { Icon: SiNextdotjs, color: "rgb(var(--ink))" },
+  "next.js": { Icon: SiNextdotjs, color: "rgb(var(--ink))" },
   tailwind: { Icon: SiTailwindcss, color: "#06B6D4" },
   tailwindcss: { Icon: SiTailwindcss, color: "#06B6D4" },
-  shadcnui: { Icon: SiShadcnui, color: "#15110d" },
-  "shadcn/ui": { Icon: SiShadcnui, color: "#15110d" },
+  shadcnui: { Icon: SiShadcnui, color: "rgb(var(--ink))" },
+  "shadcn/ui": { Icon: SiShadcnui, color: "rgb(var(--ink))" },
   flutter: { Icon: SiFlutter, color: "#02569B" },
   dart: { Icon: SiDart, color: "#0175C2" },
   nodejs: { Icon: SiNodedotjs, color: "#5FA04E" },
   "node.js": { Icon: SiNodedotjs, color: "#5FA04E" },
   node: { Icon: SiNodedotjs, color: "#5FA04E" },
-  express: { Icon: SiExpress, color: "#15110d" },
-  "express.js": { Icon: SiExpress, color: "#15110d" },
+  express: { Icon: SiExpress, color: "rgb(var(--ink))" },
+  "express.js": { Icon: SiExpress, color: "rgb(var(--ink))" },
   jwt: { Icon: SiJsonwebtokens, color: "#D63AFF" },
   rest: { Icon: Server, color: "#1d3fb8" },
   oauth: { Icon: SiOpenid, color: "#F78C40" },
@@ -99,10 +99,10 @@ const TECH: Record<string, TechMeta> = {
   "full-stack": { Icon: Code2, color: "#e63322" },
   fullstack: { Icon: Code2, color: "#e63322" },
   pandas: { Icon: SiPython, color: "#150458" },
-  regex: { Icon: Code2, color: "#15110d" },
+  regex: { Icon: Code2, color: "rgb(var(--ink))" },
 };
 
-const FALLBACK: TechMeta = { Icon: Code2, color: "#15110d" };
+const FALLBACK: TechMeta = { Icon: Code2, color: "rgb(var(--ink))" };
 
 function normalize(name: string): string {
   return name.toLowerCase().replace(/\s+/g, "").replace(/[._-]/g, "");

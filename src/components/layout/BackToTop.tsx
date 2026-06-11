@@ -37,7 +37,7 @@ export function BackToTop() {
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
           whileHover={{ y: -3, x: -2 }}
           whileTap={{ scale: 0.94 }}
-          className="group fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center border-2 border-ink bg-paper-card text-ink shadow-[4px_4px_0_0_#15110d] transition-shadow hover:shadow-[2px_2px_0_0_#15110d]"
+          className="group fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center border-2 border-ink bg-paper-card text-ink shadow-hard-md transition-shadow hover:shadow-hard-sm"
         >
           {/* Vermilion progress strip on the left */}
           <motion.span

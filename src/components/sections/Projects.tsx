@@ -118,7 +118,7 @@ function ProjectCard({
                 className="absolute inset-0"
                 style={{
                   backgroundImage:
-                    "radial-gradient(circle at 1px 1px, rgba(21,17,13,0.35) 1px, transparent 0)",
+                    "radial-gradient(circle at 1px 1px, rgb(var(--ink) / 0.35) 1px, transparent 0)",
                   backgroundSize: "7px 7px",
                   maskImage:
                     "linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%)",

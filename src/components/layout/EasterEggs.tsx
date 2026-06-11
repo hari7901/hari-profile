@@ -260,7 +260,7 @@ export function EasterEggs() {
             transition={{ type: "spring", stiffness: 200, damping: 14 }}
             className="pointer-events-none fixed left-1/2 top-1/2 z-[85] -translate-x-1/2 -translate-y-1/2"
           >
-            <div className="relative border-[6px] border-vermilion bg-paper-card px-8 py-6 text-center shadow-[8px_8px_0_0_#15110d]">
+            <div className="relative border-[6px] border-vermilion bg-paper-card px-8 py-6 text-center shadow-hard-xl">
               <div className="font-mono text-[11px] uppercase tracking-widest text-vermilion">
                 Fun Mode · Vol. ∞
               </div>
@@ -284,7 +284,7 @@ export function EasterEggs() {
             animate={{ y: 0, rotate: -4, opacity: 1 }}
             exit={{ y: 120, opacity: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
-            className="fixed bottom-6 left-6 z-[80] block border-[4px] border-ink bg-mustard p-4 shadow-[6px_6px_0_0_#15110d]"
+            className="fixed bottom-6 left-6 z-[80] block border-[4px] border-ink bg-mustard p-4 shadow-hard-lg"
             data-cursor="say hi"
           >
             <div className="font-mono text-[10px] uppercase tracking-widest text-ink">
@@ -315,14 +315,14 @@ export function EasterEggs() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               transition={{ type: "spring", stiffness: 280, damping: 24 }}
-              className="relative w-[min(90vw,32rem)] border-[3px] border-ink bg-paper-card p-6 shadow-[8px_8px_0_0_#15110d]"
+              className="relative w-[min(90vw,32rem)] border-[3px] border-ink bg-paper-card p-6 shadow-hard-xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 type="button"
                 onClick={() => setShortcuts(false)}
                 aria-label="Close shortcuts"
-                className="absolute -top-3 -right-3 grid h-9 w-9 place-items-center border-2 border-ink bg-vermilion text-paper shadow-[3px_3px_0_0_#15110d]"
+                className="absolute -top-3 -right-3 grid h-9 w-9 place-items-center border-2 border-ink bg-vermilion text-paper shadow-hard"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -344,7 +344,7 @@ export function EasterEggs() {
                       {s.keys.map((k) => (
                         <kbd
                           key={k}
-                          className="grid h-6 min-w-[1.5rem] place-items-center border border-ink bg-paper px-1.5 font-mono text-[10px] font-bold uppercase shadow-[1px_1px_0_0_#15110d]"
+                          className="grid h-6 min-w-[1.5rem] place-items-center border border-ink bg-paper px-1.5 font-mono text-[10px] font-bold uppercase shadow-hard-xs"
                         >
                           {k}
                         </kbd>
@@ -407,7 +407,7 @@ function PaperClipNote({ onOpenShortcuts }: { onOpenShortcuts: () => void }) {
           className="group fixed bottom-6 left-6 z-40 hidden md:block"
           aria-label="Show keyboard shortcuts"
         >
-          <div className="relative border-[2.5px] border-ink bg-mustard p-3 text-left shadow-[4px_4px_0_0_#15110d]">
+          <div className="relative border-[2.5px] border-ink bg-mustard p-3 text-left shadow-hard-md">
             {/* Paper clip */}
             <span
               aria-hidden
@@ -417,7 +417,7 @@ function PaperClipNote({ onOpenShortcuts }: { onOpenShortcuts: () => void }) {
                 <path
                   d="M3 22 V6 a3 3 0 0 1 6 0 v12 a2 2 0 0 1 -4 0 V8"
                   fill="none"
-                  stroke="#15110d"
+                  stroke="rgb(var(--ink))"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                 />
@@ -509,7 +509,7 @@ function StickerConfetti() {
             ease: "easeIn",
           }}
           style={{ left: `${p.left}%` }}
-          className={`absolute top-0 flex items-center gap-1 border-2 border-ink px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-widest shadow-[2px_2px_0_0_#15110d] ${p.tone}`}
+          className={`absolute top-0 flex items-center gap-1 border-2 border-ink px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-widest shadow-hard-sm ${p.tone}`}
         >
           <TechIcon name={p.tech} className="h-3 w-3" branded={false} />
           {p.tech}

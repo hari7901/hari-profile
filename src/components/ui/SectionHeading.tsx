@@ -72,7 +72,7 @@ export function SectionHeading({
               <motion.span
                 initial={{ opacity: 0, y: -6, rotate: -8 }}
                 animate={{ opacity: 1, y: 0, rotate: -4 }}
-                className="absolute -bottom-2 left-2 border-2 border-ink bg-mustard px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-ink shadow-[2px_2px_0_0_#15110d]"
+                className="absolute -bottom-2 left-2 border-2 border-ink bg-mustard px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-ink shadow-hard-sm"
               >
                 ouch · {clicks}×
               </motion.span>

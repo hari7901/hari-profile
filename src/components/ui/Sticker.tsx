@@ -39,7 +39,7 @@ export function Sticker({
       <div
         style={{ transform: `rotate(${rotate}deg)` }}
         className={cn(
-          "inline-flex select-none items-center justify-center border-2 border-ink px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest shadow-[3px_3px_0_0_#15110d]",
+          "inline-flex select-none items-center justify-center border-2 border-ink px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest shadow-hard",
           VARIANTS[variant],
           className,
         )}
@@ -60,7 +60,7 @@ export function Sticker({
       whileTap={{ scale: 0.97 }}
       style={{ cursor: "grab", touchAction: "none" }}
       className={cn(
-        "inline-flex select-none items-center justify-center border-2 border-ink px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest shadow-[3px_3px_0_0_#15110d]",
+        "inline-flex select-none items-center justify-center border-2 border-ink px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest shadow-hard",
         VARIANTS[variant],
         className,
       )}

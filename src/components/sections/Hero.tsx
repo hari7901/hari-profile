@@ -170,13 +170,13 @@ export function Hero() {
               className="mx-auto w-[clamp(14rem,42vw,18rem)]"
             />
 
-            {/* Floating stamp top-right of portrait */}
-            <div className="pointer-events-auto absolute -right-2 -top-4 md:-right-6">
+            {/* Floating stamp top-right of portrait — desktop only */}
+            <div className="pointer-events-auto absolute -right-2 -top-4 hidden md:-right-6 md:block">
               <Stamp ring="Approved · Ships Code" label="Hari" size={104} color="#e63322" />
             </div>
 
-            {/* Sticker bottom-left of portrait */}
-            <div className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6">
+            {/* Sticker bottom-left of portrait — desktop only */}
+            <div className="absolute -bottom-4 -left-2 hidden md:-bottom-6 md:-left-6 md:block">
               <Sticker variant="cobalt" rotate={-7}>
                 Microservices ✦ AWS ✦ TS
               </Sticker>

@@ -39,7 +39,7 @@ function ExperienceCard({
       {/* Monogram square on the rail */}
       <div className="absolute left-0 top-2">
         <div
-          className="grid h-14 w-14 place-items-center border-2 border-ink font-display text-2xl shadow-[3px_3px_0_0_#15110d]"
+          className="grid h-14 w-14 place-items-center border-2 border-ink font-display text-2xl shadow-hard"
           style={{ background: accent, color: "#f1ead9" }}
         >
           {monogram}

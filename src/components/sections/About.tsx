@@ -168,7 +168,7 @@ export function About() {
 
         <motion.div
           variants={fadeUp}
-          className="flex items-center justify-center md:col-span-3"
+          className="hidden items-center justify-center md:col-span-3 md:flex"
         >
           <Stamp ring="Hand-built · Type-safe" label="Vol I" size={140} color="#1d3fb8" />
         </motion.div>

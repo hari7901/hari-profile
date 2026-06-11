@@ -87,7 +87,7 @@ export function VelocityMarquee({ items, className }: VelocityMarqueeProps) {
             filled
               ? undefined
               : {
-                  WebkitTextStroke: "1.5px #15110d",
+                  WebkitTextStroke: "1.5px rgb(var(--ink))",
                 }
           }
         >

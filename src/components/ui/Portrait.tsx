@@ -115,7 +115,7 @@ export function Portrait({ src, alt, className }: PortraitProps) {
         className="absolute -bottom-6 -right-6 h-[88%] w-[88%] bg-mustard"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(21,17,13,0.4) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgb(var(--ink) / 0.4) 1px, transparent 0)",
           backgroundSize: "6px 6px",
         }}
       />
@@ -134,7 +134,7 @@ export function Portrait({ src, alt, className }: PortraitProps) {
             animate={{ opacity: 1, y: 0, scale: 1, rotate: -4 }}
             exit={{ opacity: 0, y: 6, scale: 0.8 }}
             transition={{ type: "spring", stiffness: 320, damping: 18 }}
-            className="absolute -top-10 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap border-[2.5px] border-ink bg-paper-card px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-ink shadow-[3px_3px_0_0_#15110d]"
+            className="absolute -top-10 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap border-[2.5px] border-ink bg-paper-card px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-ink shadow-hard"
           >
             {message}
             <span
@@ -182,7 +182,7 @@ export function Portrait({ src, alt, className }: PortraitProps) {
             animate={{ opacity: 1, y: 0, scale: 1, rotate: -4 }}
             exit={{ opacity: 0, scale: 0.6 }}
             transition={{ type: "spring", stiffness: 260, damping: 16 }}
-            className="absolute -top-14 left-1/2 z-40 w-max -translate-x-1/2 border-[3px] border-ink bg-mustard px-4 py-2 text-center shadow-[4px_4px_0_0_#15110d]"
+            className="absolute -top-14 left-1/2 z-40 w-max -translate-x-1/2 border-[3px] border-ink bg-mustard px-4 py-2 text-center shadow-hard-md"
           >
             <div className="font-mono text-[9px] uppercase tracking-widest text-vermilion">
               🏆 Achievement Unlocked
@@ -217,22 +217,18 @@ export function Portrait({ src, alt, className }: PortraitProps) {
           initial={{ clipPath: "inset(0 0 100% 0)", scale: 1.1 }}
           animate={{ clipPath: "inset(0 0 0% 0)", scale: 1 }}
           transition={{ duration: 1.1, ease: EASE_OUT, delay: 0.45 }}
-          className="block aspect-[4/5] w-full object-cover object-top"
-          style={{
-            filter: "grayscale(1) contrast(1.2)",
-            mixBlendMode: "multiply",
-          }}
+          className="portrait-duotone block aspect-[4/5] w-full object-cover object-top"
         />
 
         {/* Tape strips at corners — catch a faint breeze */}
         <span
           aria-hidden
-          className="amb-sway absolute -top-3 -left-4 bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgba(21,17,13,0.3)]"
+          className="amb-sway absolute -top-3 -left-4 bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgb(var(--ink) / 0.3)]"
           style={{ ["--sway-base" as string]: "-18deg" }}
         />
         <span
           aria-hidden
-          className="amb-sway absolute -bottom-3 -right-4 bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgba(21,17,13,0.3)]"
+          className="amb-sway absolute -bottom-3 -right-4 bg-mustard/80 px-6 py-1.5 shadow-[1px_1px_0_0_rgb(var(--ink) / 0.3)]"
           style={{ ["--sway-base" as string]: "10deg", animationDelay: "2.5s" }}
         />
 

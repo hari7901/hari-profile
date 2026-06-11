@@ -164,6 +164,7 @@ export function Contact() {
               label="Inbox"
               size={170}
               color="#1d3fb8"
+              className="hidden md:block"
             />
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Sticker variant="mustard" rotate={-6}>

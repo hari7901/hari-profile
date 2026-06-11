@@ -42,7 +42,7 @@ export function Background() {
         className="amb-drift-b absolute -top-10 right-0 h-[260px] w-[260px]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(21,17,13,0.45) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgb(var(--ink) / 0.45) 1px, transparent 0)",
           backgroundSize: "6px 6px",
           maskImage: "radial-gradient(circle at 100% 0%, black 0%, transparent 70%)",
           WebkitMaskImage:

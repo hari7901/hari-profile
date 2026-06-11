@@ -1,28 +1,40 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        // Newsprint palette — warm paper, ink black, and editorial accents.
+        // Newsprint palette — driven by CSS variables (see index.css) so the
+        // whole theme can flip to "newsprint at night" via the .dark class.
+        // Channels are space-separated RGB so Tailwind opacity modifiers work.
         paper: {
-          DEFAULT: "#f1ead9",
-          deep: "#e9dfc8",
-          warm: "#f7f1e1",
-          card: "#fbf6e8",
+          DEFAULT: "rgb(var(--paper) / <alpha-value>)",
+          deep: "rgb(var(--paper-deep) / <alpha-value>)",
+          warm: "rgb(var(--paper-warm) / <alpha-value>)",
+          card: "rgb(var(--paper-card) / <alpha-value>)",
         },
         ink: {
-          DEFAULT: "#15110d",
-          soft: "#3a322a",
-          muted: "#7a6f60",
-          faint: "#a89e8b",
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          soft: "rgb(var(--ink-soft) / <alpha-value>)",
+          muted: "rgb(var(--ink-muted) / <alpha-value>)",
+          faint: "rgb(var(--ink-faint) / <alpha-value>)",
         },
-        // Bold, hand-mixed accents — not the AI gradient palette.
-        vermilion: "#e63322",
-        cobalt: "#1d3fb8",
-        mustard: "#d9a017",
-        sage: "#5a7a4a",
-        plum: "#7a2e5a",
+        // Bold, hand-mixed accents — brightened slightly in dark mode.
+        vermilion: "rgb(var(--vermilion) / <alpha-value>)",
+        cobalt: "rgb(var(--cobalt) / <alpha-value>)",
+        mustard: "rgb(var(--mustard) / <alpha-value>)",
+        sage: "rgb(var(--sage) / <alpha-value>)",
+        plum: "rgb(var(--plum) / <alpha-value>)",
+      },
+      boxShadow: {
+        // Brutalist hard offset shadows — colour follows the theme.
+        "hard-xs": "1px 1px 0 0 rgb(var(--shadow))",
+        "hard-sm": "2px 2px 0 0 rgb(var(--shadow))",
+        hard: "3px 3px 0 0 rgb(var(--shadow))",
+        "hard-md": "4px 4px 0 0 rgb(var(--shadow))",
+        "hard-lg": "6px 6px 0 0 rgb(var(--shadow))",
+        "hard-xl": "8px 8px 0 0 rgb(var(--shadow))",
       },
       fontFamily: {
         // Dramatic editorial serif for display

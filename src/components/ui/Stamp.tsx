@@ -25,7 +25,7 @@ export function Stamp({
   label,
   className,
   size = 120,
-  color = "#15110d",
+  color = "rgb(var(--ink))",
   spin = true,
 }: StampProps) {
   const [boost, setBoost] = useState(0);

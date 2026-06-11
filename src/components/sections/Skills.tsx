@@ -80,7 +80,7 @@ export function Skills() {
                 style={{
                   ["--sway-base" as string]: "-3deg",
                   animationDelay: `${gi * 0.5}s`,
-                  boxShadow: "1px 1px 0 0 rgba(21,17,13,0.25)",
+                  boxShadow: "1px 1px 0 0 rgb(var(--ink) / 0.25)",
                 }}
               />
               <div className="flex items-center gap-3 border-b border-ink/30 pb-3">
@@ -108,7 +108,7 @@ export function Skills() {
                     <div
                       key={item}
                       data-cursor={item.toLowerCase()}
-                      className="group/chip relative flex flex-col items-center justify-center gap-1 border border-ink/15 bg-paper p-2 transition-all hover:-translate-y-1 hover:border-ink hover:shadow-[2px_2px_0_0_#15110d]"
+                      className="group/chip relative flex flex-col items-center justify-center gap-1 border border-ink/15 bg-paper p-2 transition-all hover:-translate-y-1 hover:border-ink hover:shadow-hard-sm"
                     >
                       <TechIcon
                         name={item}

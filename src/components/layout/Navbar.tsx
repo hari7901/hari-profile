@@ -5,6 +5,7 @@ import { NAV_ITEMS, PROFILE } from "@/data/portfolio";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { cn } from "@/lib/cn";
 import { EASE_OUT } from "@/lib/motion";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const SECTION_IDS = NAV_ITEMS.map((item) => item.id);
 
@@ -93,38 +94,43 @@ export function Navbar() {
             })}
           </div>
 
-          {/* CTA */}
-          <a
-            href={PROFILE.resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-            data-cursor="download"
-            className="hidden shrink-0 items-center gap-2 border-2 border-ink bg-ink px-3.5 py-2 font-mono text-[11px] uppercase tracking-widest text-paper shadow-[3px_3px_0_0_#e63322] transition-all hover:shadow-[1px_1px_0_0_#e63322] hover:translate-x-[2px] hover:translate-y-[2px] md:inline-flex"
-          >
-            <FileText className="h-3.5 w-3.5" />
-            Résumé
-          </a>
+          {/* Right-side controls */}
+          <div className="flex shrink-0 items-center gap-2.5">
+            <ThemeToggle />
 
-          {/* Mobile toggle */}
-          <button
-            type="button"
-            aria-label="Toggle navigation"
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center border-2 border-ink bg-paper text-ink shadow-[3px_3px_0_0_#15110d] lg:hidden"
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.span
-                key={menuOpen ? "close" : "menu"}
-                initial={{ rotate: -45, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 45, opacity: 0 }}
-                transition={{ duration: 0.18 }}
-              >
-                {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </motion.span>
-            </AnimatePresence>
-          </button>
+            {/* CTA */}
+            <a
+              href={PROFILE.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="download"
+              className="hidden shrink-0 items-center gap-2 border-2 border-ink bg-ink px-3.5 py-2 font-mono text-[11px] uppercase tracking-widest text-paper shadow-[3px_3px_0_0_#e63322] transition-all hover:shadow-[1px_1px_0_0_#e63322] hover:translate-x-[2px] hover:translate-y-[2px] md:inline-flex"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              Résumé
+            </a>
+
+            {/* Mobile toggle */}
+            <button
+              type="button"
+              aria-label="Toggle navigation"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+              className="grid h-10 w-10 place-items-center border-2 border-ink bg-paper text-ink shadow-hard lg:hidden"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={menuOpen ? "close" : "menu"}
+                  initial={{ rotate: -45, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 45, opacity: 0 }}
+                  transition={{ duration: 0.18 }}
+                >
+                  {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </motion.span>
+              </AnimatePresence>
+            </button>
+          </div>
         </nav>
       </motion.header>
 
